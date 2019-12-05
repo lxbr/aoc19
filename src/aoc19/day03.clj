@@ -77,7 +77,6 @@
                    (<= g a e))
                (or (<= b f d)
                    (<= d f b)))
-      [vertical-line horizontal-line]
       (+ steps-1 steps-2
          (if (= :up vdir)
            (- f b)
