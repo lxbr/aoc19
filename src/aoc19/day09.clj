@@ -11,7 +11,7 @@
   {1 [:value :value :address]
    2 [:value :value :address]
    3 [:address]
-   4 [:address]
+   4 [:value]
    5 [:value :value]
    6 [:value :value]
    7 [:value :value :address]
@@ -54,8 +54,8 @@
         3 (let [[j] (get-args op i base ops)]
             (recur (+ 2 i) base (assoc ops j (first in)) (next in) out))
 
-        4 (let [[j] (get-args op i base ops)]
-            (recur (+ 2 i) base ops in (conj out (get ops j 0))))
+        4 (let [[n] (get-args op i base ops)]
+            (recur (+ 2 i) base ops in (conj out n)))
 
         5 (let [[a j] (get-args op i base ops)]
             (recur (if-not (zero? a) j (+ 3 i)) base ops in out))
